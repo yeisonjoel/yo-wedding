@@ -241,7 +241,7 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var location = {lat:10.427577956738288,lng:-66.80198558192969};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -255,7 +255,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {lat:10.427577956738288,lng:-66.80198558192969};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
@@ -490,4 +490,110 @@ var MD5 = function (string) {
     var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
 
     return temp.toLowerCase();
+    
 };
+
+//NEW CODE FOR AUDIO & HERO GATE AND COUNTDOWN TIMER
+
+document.addEventListener('DOMContentLoaded', function () {                                 // new code
+    var weddingDate = new Date('2027-02-06T17:00:00').getTime();                          // new code
+    var heroGate = document.getElementById('hero-gate');                                  // new code
+    var enterBtn = document.getElementById('enter-btn');                                  // new code
+    var audio = document.getElementById('wedding-audio');                                 // new code
+    var musicToggleBtn = document.getElementById('music-toggle-btn');                     // new code
+    var musicIcon = document.getElementById('music-icon');                                // new code
+    var isPlaying = false;                                                                // new code
+
+    if (enterBtn && heroGate && audio) {                                                  // new code
+        enterBtn.addEventListener('click', function () {                                  // new code
+            heroGate.classList.add('hidden');                                             // new code
+            
+            audio.play().then(function () {                                               // new code
+                isPlaying = true;                                                         // new code
+                if (musicIcon) musicIcon.textContent = '🎵';                              // new code
+                if (musicToggleBtn) musicToggleBtn.classList.remove('hidden');            // new code
+            }).catch(function (err) {                                                     // new code
+                console.warn("Autoplay failed or audio missing:", err);                   // new code
+                if (musicToggleBtn) musicToggleBtn.classList.remove('hidden');            // new code
+            });                                                                           // new code
+
+            document.body.style.overflow = 'auto';                                        // new code
+        });                                                                               // new code
+    }                                                                                     // new code
+
+    if (musicToggleBtn && audio) {                                                        // new code
+        musicToggleBtn.addEventListener('click', function () {                            // new code
+            if (isPlaying) {                                                              // new code
+                audio.pause();                                                            // new code
+                if (musicIcon) musicIcon.textContent = '🔇';                              // new code
+                isPlaying = false;                                                        // new code
+            } else {                                                                      // new code
+                audio.play();                                                             // new code
+                if (musicIcon) musicIcon.textContent = '🎵';                              // new code
+                isPlaying = true;                                                         // new code
+            }                                                                             // new code
+        });                                                                               // new code
+    }                                                                                     // new code
+
+    function updateCountdown() {                                                          // new code
+        var countdownEl = document.getElementById('countdown');                           // new code
+        if (!countdownEl) return;                                                         // new code
+
+        var now = new Date().getTime();                                                   // new code
+        var distance = weddingDate - now;                                                 // new code
+
+        if (distance < 0) {                                                               // new code
+            countdownEl.innerHTML = "<h3>It's Wedding Day!</h3>";                         // new code
+            return;                                                                       // new code
+        }                                                                                 // new code
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));                          // new code
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));    // new code
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));            // new code
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);                        // new code
+
+        var cdDays = document.getElementById('cd-days');                                  // new code
+        var cdHours = document.getElementById('cd-hours');                                // new code
+        var cdMins = document.getElementById('cd-mins');                                  // new code
+        var cdSecs = document.getElementById('cd-secs');                                  // new code
+
+        if (cdDays) cdDays.textContent = String(days).padStart(2, '0');                   // new code
+        if (cdHours) cdHours.textContent = String(hours).padStart(2, '0');                // new code
+        if (cdMins) cdMins.textContent = String(minutes).padStart(2, '0');                // new code
+        if (cdSecs) cdSecs.textContent = String(seconds).padStart(2, '0');                // new code
+    }                                                                                     // new code
+
+    updateCountdown();                                                                    // new code
+    setInterval(updateCountdown, 5000);             
+    
+    // new code
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('.coverflow-slider')) {
+        var coverflowSwiper = new Swiper('.coverflow-slider', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            speed: 250,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            coverflowEffect: {
+                rotate: 35,          // Rotation angle for side cards
+                stretch: 0,
+                depth: 160,          // 3D depth perspective effect
+                modifier: 1,
+                slideShadows: true, // Keeps cards bright and clean
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+});

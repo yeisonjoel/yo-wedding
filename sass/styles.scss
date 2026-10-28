@@ -251,40 +251,195 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  min-height: 100vh;
+  background: url('../img/hero.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
+  /* Flexbox column to stack header at top */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Keeps header at top without forcing space-between */
+
+  .navigation {
+    width: 100%;
+    z-index: 10;
+    position: relative; /* Ensures it flows naturally at the top */
+  }
+
+  /* Center the card vertically and horizontally in remaining space */
+  .hero-content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* PERFECT vertical centering */
+    align-items: center;     /* PERFECT horizontal centering */
+    width: 100%;
+    padding: 40px 15px;      /* Safe padding for smaller viewports */
+    margin: 0 auto;
+    
+    img {
+      width: auto;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
   .down-arrow a {
     color: $txt-light;
   }
+
   h1 {
     color: $txt-light;
     margin-bottom: 40px;
   }
+
   p.intro {
     color: $txt-light;
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 80px;
   }
-  .hero-content {
-    padding-top: 40%;
-  }
-  .hero-content img {
-    width: 55%;
-    margin-bottom: 12%;
+  .down-arrow a {
+    color: $txt-light;
   }
 }
+.invitation {
+  background: url('../img/flower-bg.png') center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  
+  /* Use generous vertical padding to give the card breathing room and center it naturally */
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .invitation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .down-arrow a {
+    color: $txt-light;
+  }
+  h2 {
+    margin-bottom: 30px;
+    color: #843c16;
+  }
+  h3 {
+    color: #843c16;
+    margin-bottom: 40px;
+  }
+  
+  p.intro {
+    color: $txt-light;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 80px;
+  }
+
+  .invitation-center {
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    min-height: 580px;
+    margin: 0 auto; /* Centers the card horizontally */
+    padding: 80px 35px 50px 35px;
+    
+    border: 2px solid #843c16; 
+    border-top-left-radius: 220px;
+    border-top-right-radius: 220px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    box-shadow: 0 15px 35px rgba(132, 60, 22, 0.08);
+    box-sizing: border-box;
+
+    h2 {
+      font-family: 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #843c16;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: 'Montserrat', 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #843c16;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* Floral Corner Decorations */
+    .floral-accent {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .floral-accent.top-right {
+      width: 260px;
+      height: 260px;
+      top: -70px;
+      right: -40px;
+      background-image: url('../img/bottom-left-flower.webp');
+      transform: rotate(180deg);
+    }
+
+    .floral-accent.bottom-left {
+      width: 260px;
+      height: 260px;
+      bottom: -105px;
+      left: -55px;
+      background-image: url('../img/bottom-left-flower.webp');
+    }
+
+    .enter-btn {
+      display: inline-block;
+      padding: 14px 34px;
+      background-color: #c59b27;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.35);
+      transition: all 0.3s ease-in-out;
+      border: none;
+
+      &:hover {
+        background-color: #b0871f;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
 .navigation {
   transition: all 300ms ease-in-out;
   position: fixed;
@@ -381,7 +536,17 @@ Social share buttons
 
 /* ==========================================================================
 Intro
+
 ========================================================================== */
+#intro {
+  background: url('../img/avila-bg.png') center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+
+}
 .intro span.icon {
   font-size: 40px;
   color: $accent-color;
@@ -648,6 +813,12 @@ Features-stack
 Instagram
 ========================================================================== */
 #instagram {
+  background: url('../img/icoche3-bg.png') center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
   img {
     width: 100%;
   }
@@ -656,7 +827,7 @@ Instagram
 /* ==========================================================================
 Engagement Pics
 ========================================================================== */
-#eng-pics {
+/*#eng-pics {
   img {
     width: 100%;
     height: auto;
@@ -721,7 +892,115 @@ Engagement Pics
     z-index: -1;
   }
 }
+*/
+#eng-pics {
+  background-color: #fdfbf7;
+  overflow: hidden;
 
+  .sub-header {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 40px;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .coverflow-slider {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    width: 280px;
+    height: 380px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(132, 60, 22, 0.12);
+    border: 3px solid #ffffff;
+    transition: transform 0.3s ease;
+  }
+
+  /* Preserving your original image and overlay taxonomy */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+
+  .img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-wrap .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .img-wrap i {
+    color: #843c16;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .img-wrap:hover img, .img-wrap:focus img {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .img-wrap:hover .overlay, .img-wrap:focus .overlay {
+    opacity: 1;
+  }
+
+  /* Customizing Swiper Navigation Arrows with Gold Theme */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #c59b27;
+    background: rgba(255, 255, 255, 0.85);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    &::after {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 767px) {
+  #eng-pics .swiper-slide {
+    width: 220px;
+    height: 300px;
+  }
+}
 /* ==========================================================================
 Embed video
 ========================================================================== */
@@ -821,7 +1100,7 @@ RSVP form
         left: 30px;
         transform: translateY(-50%);
       }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key {
+      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-music, .fa-cutlery {
         font-size: 14px;
         position: absolute;
         top: 50%;
@@ -898,4 +1177,327 @@ body.modal-open {
 }
 .modal-body {
   padding:25px;
+}
+
+
+ .hero-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../img/hero-bg.png') center/cover no-repeat;
+  text-align: center;
+  color: #ffffff;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    margin: 15px 0 30px;
+    font-family: 'Sacramento', cursive, serif;
+  }
+}
+
+/* Countdown Container */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+
+  .countdown-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 16px;
+    border-radius: 8px;
+    min-width: 65px;
+
+    span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+/* Enter Button */
+.enter-btn {
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  small {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  &:hover {
+    background: #b89628;
+    transform: scale(1.05);
+  }
+}
+
+/* Floating Music Toggle Button */
+.music-toggle-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: opacity 0.4s ease;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.help-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(132, 60, 22, 0.15); /* Soft warm brown border matching your theme */
+  box-shadow: 0 10px 30px rgba(132, 60, 22, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #843c16;
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+.help-card {
+  /* ... your existing card styles ... */
+
+  .help-image-container {
+    width: 100%;
+    height: auto;               /* Let height adjust naturally instead of fixed cropping */
+    max-height: 380px;          /* Optional limit so it doesn't get too tall */
+    overflow: visible;          /* Ensure nothing is clipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      height: auto;             /* Keeps the original aspect ratio intact */
+      object-fit: contain;      /* Ensures the whole image fits without cutting off sides or bottom */
+      border-radius: 8px;
+    }
+  }
+}
+
+//REVIEW
+
+#agenda {
+  background-color: #fdfbf7; /* Optional soft luxury background paper feel */
+
+  /* Large Elegant Title Styling */
+  .section-title-large, h3.header {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 42px !important;
+    font-weight: 600;
+    color: #843c16;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .sub-header {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 50px;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .timeline-container {
+    position: relative;
+    padding: 20px 0;
+    
+    /* The central vertical gold line */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 50%;
+      width: 2px;
+      background: #c59b27; /* Solid warm gold line */
+      transform: translateX(-50%);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Time on the Left */
+  .timeline-time {
+    width: 42%;
+    text-align: right;
+    padding-right: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #843c16;
+    letter-spacing: 1px;
+    padding-top: 2px;
+  }
+
+  /* Center Dot Marker */
+  .timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border: 3px solid #c59b27; /* Gold ring */
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  /* Content on the Right */
+  .timeline-content {
+    width: 42%;
+    padding-left: 30px;
+    text-align: left;
+
+    h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #843c16;
+      margin: 0 0 5px 0;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 13.5px;
+      color: #555555;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+  #agenda {
+    .timeline-container {
+      &::before {
+        left: 20px; /* Shift line to the left on phones */
+      }
+    }
+
+    .timeline-item {
+      flex-direction: column;
+      padding-left: 45px;
+    }
+
+    .timeline-time {
+      width: 100%;
+      text-align: left;
+      padding-right: 0;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: #c59b27;
+    }
+
+    .timeline-marker {
+      left: 20px;
+      top: 4px;
+    }
+
+    .timeline-content {
+      width: 100%;
+      padding-left: 0;
+
+      h4 {
+        font-size: 19px;
+      }
+    }
+  }
 }
