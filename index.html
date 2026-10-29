@@ -106,11 +106,11 @@
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
-                            <li><a href="#invitation">Lugar y Fecha</a></li>
-                            <li><a href="#intro">Nuestra Historia</a></li>
+                            <li><a href="#invitation">Invitación</a></li>
+                            <li><a href="#intro">Nosotros</a></li>
                             <li><a href="#agenda">Agenda</a></li>
                             <li><a href="#help-us">Ayúdanos</a></li>
-                            <li><a href="#instagram">Preguntas Frecuentes</a></li>
+                            <li><a href="#instagram">FAQ</a></li>
                             <li><a href="#eng-pics">Compromiso</a></li>
                         </ul>
                         <ul class="member-actions">
@@ -125,12 +125,6 @@
             </div>
         </header>
     </section>
-
-    <!-- Content Wrapper for the Card -->
-    <div class="container hero-content">
-        
-        <!-- Your arched card HTML sits here -->
-    </div>
 </section>
 
 </section>
@@ -143,6 +137,7 @@
                     <div class="floral-accent bottom-left"></div>
                     <h2>Sábado, 06 de febrero del 2027</h2>
                     <h3>Salón Pacífico, El Hatillo, Miranda</h3>
+                    <h4>Invitación válida para una (1) persona</h4>
                     <div class="btn-container">
                         <a href="#rsvp" class="enter-btn">No olvides confirmar tu asistencia</a>
                     </div>
@@ -304,8 +299,6 @@
             </div>
         </div>
     </div>
-</section>
-
     <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -332,24 +325,25 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
 </section>
 <section id="help-us" class="section-padding">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12" >
                 <h2>PUEDES AYUDARNOS</h2>
-                <p>Queremos que seas parte activa de nuestra celebración con estos dos detalles</p>
+                <p>Queremos que seas parte activa de nuestra celebración con estos detalles</p>
             </div>
         </div>
         
         <div class="row" style="margin-top: 40px;">
             <!-- Card 1: Wedding Photo Album -->
-            <div class="col-md-6 text-center" style="margin-bottom: 30px;">
+            <div class="col-md-4 text-center" style="margin-bottom: 30px;">
                 <div class="help-card">
                     <h3>Comparte tus Fotos</h3>
                     <p>Ayúdanos a capturar nuestros recuerdos de boda compartiendo tus fotos en el 
-                        <a href="https://photos.app.goo.gl/25ddQ1zYJHinaANo7" target="_blank">Álbum de la Boda</a>.</p>
+                        <a href="https://photos.app.goo.gl/25ddQ1zYJHinaANo7" target="_blank">Álbum de la Boda</a>.
+                        Hacerlo es muy sencillo.                    
+                    </p>
                     <div class="help-image-container">
                         <img src="img/iphone_instagram.png" alt="Álbum de Boda" class="img-responsive center-block" style="max-height: 350px; border-radius: 12px;">
                     </div>
@@ -358,19 +352,95 @@
             </div>
 
             <!-- Card 2: Spotify Playlist for DJ -->
-            <div class="col-md-6 text-center" style="margin-bottom: 30px;">
+            <div class="col-md-4 text-center" style="margin-bottom: 30px;">
                 <div class="help-card">
-                    <h3>Arma la Playlist del DJ</h3>
-                    <p>¿Qué canción no puede faltar en la fiesta? Añade tus temas favoritos a nuestra <a href="https://open.spotify.com/playlist/3PGUqGbjn7HV2g3oAGSxWb?si=z1WhXvgORPKo2FOPE4gcwg&utm_source=copy-link&pt=e28e166aaa31bb1dd6e2b6722717bc3a&pi=pIaHgb3tQMatJ" target="_blank">playlist de Spotify</a>.</p>
+                    <h3>Arma la Playlist</h3>
+                    <p>¿Qué canción no puede faltar en la fiesta? Añade tus temas favoritos a nuestra
+                         <a href="https://open.spotify.com/playlist/3PGUqGbjn7HV2g3oAGSxWb?si=z1WhXvgORPKo2FOPE4gcwg&utm_source=copy-link&pt=e28e166aaa31bb1dd6e2b6722717bc3a&pi=pIaHgb3tQMatJ" target="_blank">playlist de Spotify</a>
+                         Prendamos la fiesta juntos
+                         .</p>
                     <div class="help-image-container">
                         <img src="img/perreito.jpeg" alt="Playlist de Spotify" class="img-responsive center-block" style="max-height: 350px; border-radius: 12px;">
                     </div>
                     <a href="https://open.spotify.com/playlist/3PGUqGbjn7HV2g3oAGSxWb?si=z1WhXvgORPKo2FOPE4gcwg&utm_source=copy-link&pt=e28e166aaa31bb1dd6e2b6722717bc3a&pi=pIaHgb3tQMatJ" target="_blank" class="btn btn-fill btn-small" style="margin-top: 20px;"><i class="fa fa-spotify"></i> Agregar Canción</a>
                 </div>
             </div>
+
+            <!-- Card 3: Gift section with Modal Trigger -->
+            <div class="col-md-4 text-center" style="margin-bottom: 30px;">
+                <div class="help-card gift-card-trigger" data-toggle="modal" data-target="#giftModal" style="cursor: pointer;">
+                    <h3>Regalo de Boda</h3>
+                    <p>Tu presencia es lo más importante para nosotros. 
+                        Pero si deseas ayudarnos en nuestra luna de miel, puedes hacerlo en las siguientes opciones.</p>
+                    <div class="help-image-container gift-box-container">
+                        <img src="img/gift-purple.png" alt="Regalo de Boda" class="img-responsive center-block pulse2" style="max-height: 350px; border-radius: 12px;">
+                    </div>
+                    <button type="button" class="btn btn-fill btn-small" style="margin-top: 20px;" data-toggle="modal" data-target="#giftModal"><i class="fa fa-gift"></i> Ver Opciones</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+<!-- ==========================================
+     GIFT BOX MODAL (Popup Window)
+========================================== -->
+<div class="modal fade" id="giftModal" tabindex="-1" role="dialog" aria-labelledby="giftModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content gift-modal-content">
+      
+      <!-- Modal Header -->
+      <div class="gift-modal-header">
+        <h4 id="giftModalLabel">Caja de Regalos</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Payment Options & QRs) -->
+      <div class="modal-body gift-modal-body">
+        <div class="row">
+          
+          <!-- Option 1: Revolut / International -->
+          <div class="col-md-4 text-center payment-option">
+            <span class="bank-badge revolut-badge">Paypal</span>
+            <h5>Yeison Gutierrez</h5>
+            <div class="qr-container">
+              <img src="img/qr-paypal.png" alt="Paypal QR">
+            </div>
+            <a href="https://paypal.me/YeisonJoelG" target="_blank"><p class="account-handle">Enviar con Enlace</p></a>
+            <a href="img/qr-paypal.png" download class="btn-small-outline">Descargar QR</a>
+          </div>
+
+          <!-- Option 2: Local Bank / Zelle / Transfer -->
+          <div class="col-md-4 text-center payment-option">
+            <span class="bank-badge bank-badge-local">Binance</span>
+            <h5>Omaira Sardá</h5>
+            <div class="qr-container">
+              <img src="img/qr-paypal.png" alt="Binance QR">
+            </div>
+            <p class="account-details">
+              <strong>ID:</strong> 12345678<br>
+            </p>
+            <a href="img/qr-paypal.png" download class="btn-small-outline">Descargar QR</a>
+          </div>
+                    <!-- Option 3: Zinli -->
+          <div class="col-md-4 text-center payment-option">
+            <span class="bank-badge revolut-badge">Zinli</span>
+            <h5>Yeison Gutierrez</h5>
+            <div class="qr-container">
+              <img src="img/qr-zinli.png" alt="Zinli QR">
+            </div>
+            <a href="https://recargas.zinli.com/s5zpsgJff6fxnsGucW7zWu" target="_blank">
+                <p class="account-handle">Enviar con Tarjeta Credito / Debito</p>
+            </a>
+            <a href="img/qr-zinli.png" download class="btn-small-outline">Descargar QR</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 <![endif]-->
         <!--<div class="row">
             <div class="col-xs-12 section-border section-padding">
@@ -682,9 +752,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Invitado"
+                                <i class="fa fa-phone"></i><input type="number" name="extras" class=""
+                                                                  placeholder="Número de Teléfono"
                                                                   required>
                             </div>
                         </div>
